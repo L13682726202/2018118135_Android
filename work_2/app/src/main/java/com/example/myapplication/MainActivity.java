@@ -31,21 +31,21 @@ public class MainActivity extends AppCompatActivity {
 
         button2.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                Intent intent = new Intent(MainActivity.this,SecondActivity.class);
+                Intent intent = new Intent("android.intent.action.SECOND");
                 startActivity(intent);
             }
         });
 
         button3.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                Intent intent = new Intent(MainActivity.this,ThirdActivity.class);
+                Intent intent = new Intent("android.intent.action.THIRD");
                 startActivity(intent);
             }
         });
 
         button4.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                Intent intent = new Intent(MainActivity.this,FourthActivity.class);
+                Intent intent = new Intent("android.intent.action.FOURTH");
                 startActivity(intent);
             }
         });
