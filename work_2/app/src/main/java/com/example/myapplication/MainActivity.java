@@ -24,28 +24,28 @@ public class MainActivity extends AppCompatActivity {
 
         button1.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                Intent intent = new Intent("android.intent.action.MAIN");
+                Intent intent = new Intent(MainActivity.this,MainActivity.class);
                 startActivity(intent);
             }
         });
 
         button2.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                Intent intent = new Intent("android.intent.action.SECOND");
+                Intent intent = new Intent(MainActivity.this,SecondActivity.class);
                 startActivity(intent);
             }
         });
 
         button3.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                Intent intent = new Intent("android.intent.action.THIRD");
+                Intent intent = new Intent(MainActivity.this,ThirdActivity.class);
                 startActivity(intent);
             }
         });
 
         button4.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                Intent intent = new Intent("android.intent.action.FOURTH");
+                Intent intent = new Intent(MainActivity.this,FourthActivity.class);
                 startActivity(intent);
             }
         });
