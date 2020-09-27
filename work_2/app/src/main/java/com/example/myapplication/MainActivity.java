@@ -42,6 +42,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        button4.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent intent = new Intent("android.intent.action.FOURTH");
+                startActivity(intent);
+            }
+        });
     }
 
     protected void onStart(){
