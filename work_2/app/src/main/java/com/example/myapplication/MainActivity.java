@@ -35,6 +35,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        button3.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent intent = new Intent("android.intent.action.THIRD");
+                startActivity(intent);
+            }
+        });
     }
 
     protected void onStart(){
