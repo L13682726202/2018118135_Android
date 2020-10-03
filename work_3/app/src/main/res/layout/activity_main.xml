@@ -50,9 +50,8 @@
                 android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
-                android:ems="10"
-                android:inputType="textPersonName"
                 android:hint="Input something here"
+                android:maxLines="6"
                 android:text="" />
 
             <LinearLayout
