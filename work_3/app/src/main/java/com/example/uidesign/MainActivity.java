@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -29,9 +31,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button6.setOnClickListener(this);
         Button button7 = (Button)findViewById(R.id.button7);
         button7.setOnClickListener(this);
-
-
+        EditText editText = (EditText)findViewById(R.id.editText);
+        ImageView imageView = (ImageView)findViewById(R.id.imageView);
     }
 
-
+    public void onClick(View v){
+        switch (v.getId()){
+            case R.id.button1:
+                break;
+            case R.id.button2:
+                break;
+            case R.id.button3:
+                break;
+            case R.id.button4:
+                break;
+            case R.id.button5:
+                break;
+            case R.id.button6:
+                break;
+            case R.id.button7:
+                break;
+        }
+    }
 }
