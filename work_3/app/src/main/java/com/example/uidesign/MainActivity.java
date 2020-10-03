@@ -1,14 +1,25 @@
 package com.example.uidesign;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private TextView textView;
+    private EditText editText;
+    private ImageView imageView;
+    private Integer flag=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,13 +42,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button6.setOnClickListener(this);
         Button button7 = (Button)findViewById(R.id.button7);
         button7.setOnClickListener(this);
-        EditText editText = (EditText)findViewById(R.id.editText);
-        ImageView imageView = (ImageView)findViewById(R.id.imageView);
+        textView = (TextView)findViewById(R.id.textView);
+        editText = (EditText)findViewById(R.id.editText);
+        imageView = (ImageView)findViewById(R.id.imageView);
     }
 
     public void onClick(View v){
         switch (v.getId()){
             case R.id.button1:
+                textView.setText("");
                 break;
             case R.id.button2:
                 break;
