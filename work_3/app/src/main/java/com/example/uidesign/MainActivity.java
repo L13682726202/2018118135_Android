@@ -68,6 +68,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 editText.setText("");
                 break;
             case R.id.button5:
+                if(flag==1){
+                    flag = 2;
+                    imageView.setImageResource(R.drawable.img_2);
+                }
+                else if(flag==2){
+                    flag = 3;
+                    imageView.setImageResource(R.drawable.img_3);
+                }
+                else{
+                    flag = 1;
+                    imageView.setImageResource(R.drawable.img_1);
+                }
                 break;
             case R.id.button6:
                 break;
