@@ -53,6 +53,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 textView.setText("");
                 break;
             case R.id.button2:
+                String backText = textView.getText().toString();
+                editText.append("\n");
+                editText.append(backText);
+                textView.setText("");
                 break;
             case R.id.button3:
                 break;
