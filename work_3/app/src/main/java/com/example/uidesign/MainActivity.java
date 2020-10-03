@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 textView.setText("");
                 break;
             case R.id.button3:
+                editText.setText("");
                 break;
             case R.id.button4:
                 break;
