@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.ViewHolder> {
+
     private List<Animal> mAnimalList;
 
     static class ViewHolder extends RecyclerView.ViewHolder{
