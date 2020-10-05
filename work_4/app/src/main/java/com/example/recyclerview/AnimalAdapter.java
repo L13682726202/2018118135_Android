@@ -5,8 +5,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -15,11 +18,13 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.ViewHolder
     private List<Animal> mAnimalList;
 
     static class ViewHolder extends RecyclerView.ViewHolder{
+        TextView animalNumber;
         ImageView animalImage;
         EditText animalName;
 
         public ViewHolder(View view){
             super(view);
+            animalNumber = (TextView)view.findViewById(R.id.animal_number);
             animalImage = (ImageView)view.findViewById(R.id.animal_image);
             animalName = (EditText)view.findViewById(R.id.animal_name);
         }
@@ -37,6 +42,7 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.ViewHolder
 
     public void onBindViewHolder(ViewHolder holder, int position){
         Animal animal = mAnimalList.get(position);
+        holder.animalNumber.setText(animal.getNumber());
         holder.animalImage.setImageResource(animal.getImageId());
         holder.animalName.setText(animal.getName());
     }

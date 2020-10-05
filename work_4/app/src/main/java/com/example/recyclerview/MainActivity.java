@@ -30,30 +30,31 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initAnimals(){
+        int n = 1;
         for(int i = 0; i < 2; i++){
-            Animal mouse = new Animal(getRandomLengthName("鼠"), R.drawable.mouse);
+            Animal mouse = new Animal(n++,getRandomLengthName("鼠"), R.drawable.mouse);
             animalList.add(mouse);
-            Animal cattle = new Animal(getRandomLengthName("牛"), R.drawable.cattle);
+            Animal cattle = new Animal(n++,getRandomLengthName("牛"), R.drawable.cattle);
             animalList.add(cattle);
-            Animal tiger = new Animal(getRandomLengthName("虎"), R.drawable.tiger);
+            Animal tiger = new Animal(n++,getRandomLengthName("虎"), R.drawable.tiger);
             animalList.add(tiger);
-            Animal rabbit = new Animal(getRandomLengthName("兔"), R.drawable.rabbit);
+            Animal rabbit = new Animal(n++,getRandomLengthName("兔"), R.drawable.rabbit);
             animalList.add(rabbit);
-            Animal dragon = new Animal(getRandomLengthName("龙"), R.drawable.dragon);
+            Animal dragon = new Animal(n++,getRandomLengthName("龙"), R.drawable.dragon);
             animalList.add(dragon);
-            Animal snake = new Animal(getRandomLengthName("蛇"), R.drawable.snake);
+            Animal snake = new Animal(n++,getRandomLengthName("蛇"), R.drawable.snake);
             animalList.add(snake);
-            Animal horse = new Animal(getRandomLengthName("马"), R.drawable.horse);
+            Animal horse = new Animal(n++,getRandomLengthName("马"), R.drawable.horse);
             animalList.add(horse);
-            Animal sheep = new Animal(getRandomLengthName("羊"), R.drawable.sheep);
+            Animal sheep = new Animal(n++,getRandomLengthName("羊"), R.drawable.sheep);
             animalList.add(sheep);
-            Animal monkey = new Animal(getRandomLengthName("猴"), R.drawable.monkey);
+            Animal monkey = new Animal(n++,getRandomLengthName("猴"), R.drawable.monkey);
             animalList.add(monkey);
-            Animal chicken = new Animal(getRandomLengthName("鸡"), R.drawable.chicken);
+            Animal chicken = new Animal(n++,getRandomLengthName("鸡"), R.drawable.chicken);
             animalList.add(chicken);
-            Animal dog = new Animal(getRandomLengthName("狗"), R.drawable.dog);
+            Animal dog = new Animal(n++,getRandomLengthName("狗"), R.drawable.dog);
             animalList.add(dog);
-            Animal pig = new Animal(getRandomLengthName("猪"), R.drawable.pig);
+            Animal pig = new Animal(n++,getRandomLengthName("猪"), R.drawable.pig);
             animalList.add(pig);
         }
     }
