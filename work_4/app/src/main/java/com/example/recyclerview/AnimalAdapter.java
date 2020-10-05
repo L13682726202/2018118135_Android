@@ -21,6 +21,7 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.ViewHolder
     private int flag = 0;
     private double startTime;
     private int times = 0;
+    private int editable = 0;
 
     static class ViewHolder extends RecyclerView.ViewHolder{
         View animalView;
@@ -54,6 +55,7 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.ViewHolder
                     lastEditText.setFocusable(false);
                     lastEditText.setFocusableInTouchMode(false);
                     lastEditText = holder.animalName;
+                    editable = 0;
                     holder.animalName.setFocusable(false);
                     holder.animalName.setFocusableInTouchMode(false);
                 }
@@ -73,6 +75,7 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.ViewHolder
                     lastEditText.setFocusable(false);
                     lastEditText.setFocusableInTouchMode(false);
                     lastEditText = holder.animalName;
+                    editable = 0;
                     holder.animalName.setFocusable(false);
                     holder.animalName.setFocusableInTouchMode(false);
                 }
@@ -92,6 +95,7 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.ViewHolder
                     lastEditText.setFocusable(false);
                     lastEditText.setFocusableInTouchMode(false);
                     lastEditText = holder.animalName;
+                    editable = 0;
                     holder.animalName.setFocusable(false);
                     holder.animalName.setFocusableInTouchMode(false);
                 }
@@ -106,35 +110,44 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.ViewHolder
                 if(flag == 0){
                     flag = 1;
                     lastEditText = holder.animalName;
+                    editable = 1;
                     holder.animalName.setFocusableInTouchMode(true);
                     holder.animalName.setFocusable(true);
                     holder.animalName.requestFocus();
                 }
                 else{
-                    lastEditText.setFocusable(false);
-                    lastEditText.setFocusableInTouchMode(false);
-                    lastEditText = holder.animalName;
+                    if(lastEditText != holder.animalName) {
+                        lastEditText.setFocusable(false);
+                        lastEditText.setFocusableInTouchMode(false);
+                        lastEditText = holder.animalName;
+                        editable = 0;
+                    }
                 }
                 if(times == 0){
                     times = 1;
                     startTime = System.currentTimeMillis();
-                    int position = holder.getAdapterPosition();
-                    Animal animal = mAnimalList.get(position);
-                    Toast.makeText(v.getContext(),"你点击了" + animal.getName() + "的文字",Toast.LENGTH_SHORT).show();
+                    if(editable == 0) {
+                        int position = holder.getAdapterPosition();
+                        Animal animal = mAnimalList.get(position);
+                        Toast.makeText(v.getContext(), "你点击了" + animal.getName() + "的文字", Toast.LENGTH_SHORT).show();
+                    }
                 }
                 else{
                     double endTime = System.currentTimeMillis();
                     if((endTime - startTime) <= 500){
                         times = 0;
+                        editable = 1;
                         holder.animalName.setFocusableInTouchMode(true);
                         holder.animalName.setFocusable(true);
                         holder.animalName.requestFocus();
                     }
                     else{
                         startTime = System.currentTimeMillis();
-                        int position = holder.getAdapterPosition();
-                        Animal animal = mAnimalList.get(position);
-                        Toast.makeText(v.getContext(),"你点击了" + animal.getName() + "的文字",Toast.LENGTH_SHORT).show();
+                        if(editable == 0) {
+                            int position = holder.getAdapterPosition();
+                            Animal animal = mAnimalList.get(position);
+                            Toast.makeText(v.getContext(), "你点击了" + animal.getName() + "的文字", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 }
             }
