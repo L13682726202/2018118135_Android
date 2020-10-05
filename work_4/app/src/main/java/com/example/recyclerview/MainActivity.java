@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        this.setTitle("Chinese Zodiac");
+        this.setTitle("十二生肖");
 
         initAnimals();
         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
@@ -31,36 +31,36 @@ public class MainActivity extends AppCompatActivity {
 
     private void initAnimals(){
         for(int i = 0; i < 2; i++){
-            Animal mouse = new Animal(getRandomLengthName("Mouse"), R.drawable.mouse);
+            Animal mouse = new Animal(getRandomLengthName("鼠"), R.drawable.mouse);
             animalList.add(mouse);
-            Animal cattle = new Animal(getRandomLengthName("Cattle"), R.drawable.cattle);
+            Animal cattle = new Animal(getRandomLengthName("牛"), R.drawable.cattle);
             animalList.add(cattle);
-            Animal tiger = new Animal(getRandomLengthName("Tiger"), R.drawable.tiger);
+            Animal tiger = new Animal(getRandomLengthName("虎"), R.drawable.tiger);
             animalList.add(tiger);
-            Animal rabbit = new Animal(getRandomLengthName("Rabbit"), R.drawable.rabbit);
+            Animal rabbit = new Animal(getRandomLengthName("兔"), R.drawable.rabbit);
             animalList.add(rabbit);
-            Animal dragon = new Animal(getRandomLengthName("Dragon"), R.drawable.dragon);
+            Animal dragon = new Animal(getRandomLengthName("龙"), R.drawable.dragon);
             animalList.add(dragon);
-            Animal snake = new Animal(getRandomLengthName("Snake"), R.drawable.snake);
+            Animal snake = new Animal(getRandomLengthName("蛇"), R.drawable.snake);
             animalList.add(snake);
-            Animal horse = new Animal(getRandomLengthName("Horse"), R.drawable.horse);
+            Animal horse = new Animal(getRandomLengthName("马"), R.drawable.horse);
             animalList.add(horse);
-            Animal sheep = new Animal(getRandomLengthName("Sheep"), R.drawable.sheep);
+            Animal sheep = new Animal(getRandomLengthName("羊"), R.drawable.sheep);
             animalList.add(sheep);
-            Animal monkey = new Animal(getRandomLengthName("Monkey"), R.drawable.monkey);
+            Animal monkey = new Animal(getRandomLengthName("猴"), R.drawable.monkey);
             animalList.add(monkey);
-            Animal chicken = new Animal(getRandomLengthName("Chicken"), R.drawable.chicken);
+            Animal chicken = new Animal(getRandomLengthName("鸡"), R.drawable.chicken);
             animalList.add(chicken);
-            Animal dog = new Animal(getRandomLengthName("Dog"), R.drawable.dog);
+            Animal dog = new Animal(getRandomLengthName("狗"), R.drawable.dog);
             animalList.add(dog);
-            Animal pig = new Animal(getRandomLengthName("Pig"), R.drawable.pig);
+            Animal pig = new Animal(getRandomLengthName("猪"), R.drawable.pig);
             animalList.add(pig);
         }
     }
 
     private String getRandomLengthName(String name){
         Random random = new Random();
-        int length = random.nextInt(20) + 1;
+        int length = random.nextInt(50) + 1;
         StringBuilder builder = new StringBuilder();
         for(int i = 0; i < length; i++){
             builder.append(name);
