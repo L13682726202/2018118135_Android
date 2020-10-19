@@ -31,10 +31,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void replaceFragment(Fragment fragment){
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.replace(R.id.right_layout, fragment);
-        transaction.addToBackStack(null);
-        transaction.commit();
+    //    FragmentManager fragmentManager = getSupportFragmentManager();
+    //    FragmentTransaction transaction = fragmentManager.beginTransaction();
+    //    transaction.replace(R.id.right_layout, fragment);
+    //    transaction.addToBackStack(null);
+    //    transaction.commit();
     }
 }
