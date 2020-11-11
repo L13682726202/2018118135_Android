@@ -15,6 +15,9 @@ public class LoginActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        this.setTitle("登录界面");
+
         accountEdit = (EditText)findViewById(R.id.account);
         passwordEdit = (EditText)findViewById(R.id.password);
         login = (Button)findViewById(R.id.login);
@@ -28,7 +31,7 @@ public class LoginActivity extends BaseActivity {
                     finish();
                 }
                 else{
-                    Toast.makeText(LoginActivity.this,"account or password is invalid",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this,"账号或密码不正确",Toast.LENGTH_SHORT).show();
                 }
             }
         });

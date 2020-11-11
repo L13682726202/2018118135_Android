@@ -14,7 +14,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:textSize="18sp"
-            android:text="Account:" />
+            android:text="账号:" />
 
         <EditText
             android:id="@+id/account"
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:textSize="18sp"
-            android:text="Password:" />
+            android:text="密码:" />
 
         <EditText
             android:id="@+id/password"
@@ -49,6 +49,6 @@
         android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="Login" />
+        android:text="登录" />
 
 </LinearLayout>

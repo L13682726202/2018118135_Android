@@ -43,10 +43,10 @@ public class BaseActivity extends AppCompatActivity {
     class ForceOfflineReceiver extends BroadcastReceiver{
         public void onReceive(final Context context, Intent intent){
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
-            builder.setTitle("Warning");
-            builder.setMessage("You are forced to be offline. Please try to login again.");
+            builder.setTitle("警告");
+            builder.setMessage("你已经被强制下线，请重新登录！");
             builder.setCancelable(false);
-            builder.setPositiveButton("OK",new DialogInterface.OnClickListener(){
+            builder.setPositiveButton("好的",new DialogInterface.OnClickListener(){
                public void onClick(DialogInterface dialog, int which){
                    ActivityCollector.finishAll();
                    Intent intent = new Intent(context, LoginActivity.class);
