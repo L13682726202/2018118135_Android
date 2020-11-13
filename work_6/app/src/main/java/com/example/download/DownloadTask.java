@@ -1,6 +1,11 @@
 package com.example.download;
 
 import android.os.AsyncTask;
+import android.os.Environment;
+
+import java.io.File;
+import java.io.InputStream;
+import java.io.RandomAccessFile;
 
 public class DownloadTask extends AsyncTask<String, Integer, Integer> {
 
@@ -22,7 +27,36 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
     }
 
     @Override
-    protected Integer doInBackground(String... strings) {
-        return null;
+    protected Integer doInBackground(String... params) {
+        InputStream is = null;
+        RandomAccessFile savedFile = null;
+        File file = null;
+        try{
+            long downloadedLength = 0;
+            String downloadUrl = params[0];
+            String fileName = downloadUrl.substring(downloadUrl.lastIndexOf("/"));
+            String directory = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getPath();
+            file = new File(directory + fileName);
+            if (file.exists()){
+                downloadedLength = file.length();
+            }
+            long contentLength = getContentLength(downloadUrl);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        finally {
+            try{
+
+            }
+            catch (Exception e){
+
+            }
+        }
+        return TYPE_FAILED;
+    }
+
+    private long getContentLength(String downloadUrl) {
+        return 0;
     }
 }
