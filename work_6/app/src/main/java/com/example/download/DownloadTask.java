@@ -131,6 +131,14 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
         }
     }
 
+    public void pauseDownload(){
+        isPaused = true;
+    }
+
+    public void cancelDownload(){
+        isCanceled = true;
+    }
+
     private long getContentLength(String downloadUrl) throws IOException {
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
