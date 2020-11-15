@@ -57,16 +57,48 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
                     .url(downloadUrl)
                     .build();
             Response response = client.newCall(request).execute();
+            if (response != null){
+                is = response.body().byteStream();
+                savedFile = new RandomAccessFile(file, "rw");
+                savedFile.seek(downloadedLength);
+                byte[] b = new byte[1024];
+                int total = 0;
+                int len;
+                while((len = is.read(b)) != -1){
+                    if (isCanceled){
+                        return TYPE_CANCELED;
+                    }
+                    else if(isPaused){
+                        return TYPE_PAUSED;
+                    }
+                    else{
+                        total += len;
+                        savedFile.write(b, 0, len);
+                        int progress = (int)((total + downloadedLength) * 100 / contentLength);
+                        publishProgress(progress);
+                    }
+                }
+                response.body().close();
+                return TYPE_SUCESS;
+            }
         }
         catch (Exception e){
             e.printStackTrace();
         }
         finally {
             try{
-
+                if (is != null){
+                    is.close();
+                }
+                if (savedFile != null){
+                    savedFile.close();
+                }
+                if (isCanceled && file != null){
+                    file.delete();
+                }
             }
             catch (Exception e){
-
+                e.printStackTrace();
             }
         }
         return TYPE_FAILED;
