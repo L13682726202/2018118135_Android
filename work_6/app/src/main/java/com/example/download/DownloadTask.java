@@ -4,6 +4,7 @@ import android.os.AsyncTask;
 import android.os.Environment;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.RandomAccessFile;
 
@@ -104,7 +105,43 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
         return TYPE_FAILED;
     }
 
-    private long getContentLength(String downloadUrl) {
+    protected void onProgressUpdate(Integer... values){
+        int progress = values[0];
+        if(progress > lastProgress){
+            listener.onProgress(progress);
+            lastProgress = progress;
+        }
+    }
+
+    protected void onPostExecute(Integer status){
+        switch(status){
+            case TYPE_SUCESS:
+                listener.onSuccess();
+                break;
+            case TYPE_FAILED:
+                listener.onFailed();
+                break;
+            case TYPE_PAUSED:
+                listener.onPaused();
+                break;
+            case TYPE_CANCELED:
+                listener.onCanceled();
+            default:
+                break;
+        }
+    }
+
+    private long getContentLength(String downloadUrl) throws IOException {
+        OkHttpClient client = new OkHttpClient();
+        Request request = new Request.Builder()
+                .url(downloadUrl)
+                .build();
+        Response response = client.newCall(request).execute();
+        if (response != null && response.isSuccessful()){
+            long contentLength = response.body().contentLength();
+            response.body().close();
+            return contentLength;
+        }
         return 0;
     }
 }
