@@ -22,15 +22,15 @@ standard是活动默认的启动模式，每次启动都会创建该活动的一
 
 首先启动程序
 
-![img](work_2.assets/clip_image002.png)
+![img](work_3.assets/clip_image002.png)
 
 然后连续点击三次BUTTON 4
 
-![img](work_2.assets/clip_image004.png)![img](work_2.assets/clip_image006.png)![img](work_2.assets/clip_image008.png)
+![img](work_3.assets/clip_image004.png)![img](work_3.assets/clip_image006.png)![img](work_3.assets/clip_image008.png)
 
 接下来，按回退键时我们可以发现有三个FouthActivity活动的实例
 
-![img](work_2.assets/clip_image010.png)![img](work_2.assets/clip_image012.png)![img](work_2.assets/clip_image014.png)
+![img](work_3.assets/clip_image010.png)![img](work_3.assets/clip_image012.png)![img](work_3.assets/clip_image014.png)
 
  
 
@@ -40,29 +40,29 @@ singleTop模式：
 
 首先启动程序
 
-![img](work_2.assets/clip_image016.png)
+![img](work_3.assets/clip_image016.png)
 
 接下来连续点击三次BUTTON 2
 
-![img](work_2.assets/clip_image018.png)![img](work_2.assets/clip_image020.png)![img](work_2.assets/clip_image022.png)
+![img](work_3.assets/clip_image018.png)![img](work_3.assets/clip_image020.png)![img](work_3.assets/clip_image022.png)
 
 接下来，按回退键时我们可以发现只有一个SecondActivity活动的实例，并没有创建多个SecondActivity活动的实例，点击一下回退键就会立刻退回MainActivity。
 
-![img](work_2.assets/clip_image024.png)
+![img](work_3.assets/clip_image024.png)
 
 接下来我们尝试SecondActicity活动不在栈顶的情况
 
 首先启动程序
 
-![img](work_2.assets/clip_image026.png)
+![img](work_3.assets/clip_image026.png)
 
 接下来，按一下BUTTON 2，再按一下BUTTON 4，再按一下BUTTON 2
 
-![img](work_2.assets/clip_image028.png)![img](work_2.assets/clip_image030.png)![img](work_2.assets/clip_image032.png)
+![img](work_3.assets/clip_image028.png)![img](work_3.assets/clip_image030.png)![img](work_3.assets/clip_image032.png)
 
 接下来，按回退键时我们可以发现，SecondActivity创建了两个实例，因为第二次点击BUTTON 2时，返回栈的栈顶是FouthActivity，所以会再次创建SecondActivity的实例。
 
-![img](work_2.assets/clip_image034.png)![img](work_2.assets/clip_image036.png)![img](work_2.assets/clip_image038.png)
+![img](work_3.assets/clip_image034.png)![img](work_3.assets/clip_image036.png)![img](work_3.assets/clip_image038.png)
 
 singleTask模式：
 
@@ -70,15 +70,15 @@ singleTask模式：
 
 首先启动程序
 
-![img](work_2.assets/clip_image040.png)
+![img](work_3.assets/clip_image040.png)
 
 然后点击一下BUTTON 4，再按一下BUTTON 1
 
-![img](work_2.assets/clip_image042.png)![img](work_2.assets/clip_image044.png)
+![img](work_3.assets/clip_image042.png)![img](work_3.assets/clip_image044.png)
 
 接下来，按回退键的时候会发现，只存在一个MainActivity活动实例，且因为MainActivity活动是主活动，所以按回退键会直接退回手机主界面，由此可以证明，调用已存在的singleTask模式活动时，会将该活动之上的活动全部出栈。
 
-![img](work_2.assets/clip_image046.png)
+![img](work_3.assets/clip_image046.png)
 
 singleInstance模式：
 
@@ -86,15 +86,15 @@ singleInstance模式的活动会用一个单独的返回栈来管理。而且，
 
 首先启动程序
 
-![img](work_2.assets/clip_image048.png)
+![img](work_3.assets/clip_image048.png)
 
 接下来，点击一下BUTTON 3，再点击一下BUTTON 1
 
-![img](work_2.assets/clip_image050.png)![img](work_2.assets/clip_image052.png)
+![img](work_3.assets/clip_image050.png)![img](work_3.assets/clip_image052.png)
 
 接下来，按回退键时会先从MainActivity退回ThirdActivity，然后在从ThirdActivity退回手机主界面
 
-![img](work_2.assets/clip_image054.png)![img](work_2.assets/clip_image056.png)
+![img](work_3.assets/clip_image054.png)![img](work_3.assets/clip_image056.png)
 
 ### 实验总结：
 
