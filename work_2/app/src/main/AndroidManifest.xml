@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.myapplication">
+    package="com.example.helloworld">
 
     <application
         android:allowBackup="true"
@@ -9,28 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FourthActivity" android:launchMode="standard">
-            <intent-filter>
-                <action android:name="android.intent.action.FOURTH" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".ThirdActivity" android:launchMode="singleInstance">
-            <intent-filter>
-                <action android:name="android.intent.action.THIRD" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".SecondActivity" android:launchMode="singleTop">
-            <intent-filter>
-                <action android:name="android.intent.action.SECOND" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".MainActivity" android:launchMode="singleTask">
+        <activity android:name=".SecondActivity"></activity>
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
