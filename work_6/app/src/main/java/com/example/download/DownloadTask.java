@@ -7,6 +7,10 @@ import java.io.File;
 import java.io.InputStream;
 import java.io.RandomAccessFile;
 
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
 public class DownloadTask extends AsyncTask<String, Integer, Integer> {
 
     public static final int TYPE_SUCESS = 0;
@@ -41,6 +45,18 @@ public class DownloadTask extends AsyncTask<String, Integer, Integer> {
                 downloadedLength = file.length();
             }
             long contentLength = getContentLength(downloadUrl);
+            if (contentLength == 0){
+                return TYPE_FAILED;
+            }
+            else if(contentLength == downloadedLength){
+                return TYPE_SUCESS;
+            }
+            OkHttpClient client = new OkHttpClient();
+            Request request = new Request.Builder()
+                    .addHeader("RANGE","bytes=" + downloadedLength + "-")
+                    .url(downloadUrl)
+                    .build();
+            Response response = client.newCall(request).execute();
         }
         catch (Exception e){
             e.printStackTrace();
