@@ -14,21 +14,10 @@
         tools:layout_editor_absoluteY="1dp">
 
         <Button
-            android:id="@+id/button_1"
+            android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="使用隐式Intent返回主活动" />
+            android:text="接受传递的数据，并使用显式Intent返回主活动" />
 
-        <Button
-            android:id="@+id/button_2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="使用隐式Intent打开浏览器" />
-
-        <Button
-            android:id="@+id/button_3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="使用隐式Intent拨打电话" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

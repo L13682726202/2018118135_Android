@@ -14,9 +14,22 @@
         tools:layout_editor_absoluteY="1dp">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/button_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="使用显示Intent打开活动二，并传递数据" />
+            android:text="使用隐式Intent打开活动二，并传递数据" />
+
+        <Button
+            android:id="@+id/button_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="使用隐式Intent打开浏览器" />
+
+        <Button
+            android:id="@+id/button_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="使用隐式Intent拨打电话" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
