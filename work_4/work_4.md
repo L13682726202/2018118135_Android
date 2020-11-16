@@ -20,7 +20,7 @@
 
 ![image-20201115235920561](work_4.assets/image-20201115235920561.png)
 
-隐式意图除了切换活动，还有许多的用处，点击“使用隐式INTENT打开浏览器”，主活动调用Android系统内置的动作Intent.ACTION_VIEW打开浏览器，并由传入的Uri打开百度搜索页面。
+隐式意图除了切换活动，还有许多其它的用处，点击“使用隐式INTENT打开浏览器”，主活动调用Android系统内置的动作Intent.ACTION_VIEW打开浏览器，并由传入的Uri打开百度搜索页面。
 
 ![image-20201116000240625](work_4.assets/image-20201116000240625.png)
 
