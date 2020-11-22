@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        this.setTitle("多线程测试");
+        this.setTitle("多线程");
 
         text = (TextView)findViewById(R.id.textView);
         Button button = (Button)findViewById(R.id.button);
