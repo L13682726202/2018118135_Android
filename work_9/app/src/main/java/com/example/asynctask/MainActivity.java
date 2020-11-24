@@ -5,9 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private DownloadTask downloadTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,7 +20,16 @@ public class MainActivity extends AppCompatActivity {
 
         this.setTitle("AsyncTask");
 
-        
+        Button button = (Button)findViewById(R.id.button);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.button:
+                downloadTask = new DownloadTask();
+                downloadTask.execute();
+        }
     }
 
     public class DownloadTask extends AsyncTask<Void, Integer, Boolean> {
