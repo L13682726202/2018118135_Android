@@ -5,8 +5,6 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.util.Log;
 
-import androidx.annotation.Nullable;
-
 public class MyService extends Service {
     private boolean flag = true;
 
@@ -32,7 +30,7 @@ public class MyService extends Service {
                 while(flag){
                     Log.d("MyService","子线程的id号：" + Thread.currentThread().getId());
                     try {
-                        Thread.sleep(3000);
+                        Thread.sleep(5000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }

@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.start_service:
-                Log.d("MainActivity","主线程的id号：" + getTaskId());
+                Log.d("MainActivity","主线程的id号：" + Thread.currentThread().getId());
                 Intent startIntent = new Intent(this, MyService.class);
                 startService(startIntent);
                 break;
