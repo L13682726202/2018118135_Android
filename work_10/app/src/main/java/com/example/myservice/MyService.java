@@ -10,10 +10,13 @@ import androidx.annotation.Nullable;
 public class MyService extends Service {
     private boolean flag = true;
 
-    @Nullable
+    public MyService() {
+    }
+
     @Override
     public IBinder onBind(Intent intent) {
-        return null;
+        // TODO: Return the communication channel to the service.
+        throw new UnsupportedOperationException("Not yet implemented");
     }
 
     public void onCreate(){
@@ -27,7 +30,12 @@ public class MyService extends Service {
             @Override
             public void run() {
                 while(flag){
-                    Log.d("MyService","创建子线程，子线程的id号为：" + Thread.currentThread().getId());
+                    Log.d("MyService","子线程的id号：" + Thread.currentThread().getId());
+                    try {
+                        Thread.sleep(3000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
                 stopSelf();
             }

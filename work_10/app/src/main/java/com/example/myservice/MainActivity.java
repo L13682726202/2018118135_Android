@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.start_service:
+                Log.d("MainActivity","主线程的id号：" + getTaskId());
                 Intent startIntent = new Intent(this, MyService.class);
                 startService(startIntent);
                 break;
