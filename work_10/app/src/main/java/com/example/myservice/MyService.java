@@ -8,6 +8,8 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 
 public class MyService extends Service {
+    private boolean flag = true;
+
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
@@ -24,7 +26,9 @@ public class MyService extends Service {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                Log.d("MyService","创建子线程，子线程的id号为：" + Thread.currentThread().getId());
+                while(flag){
+                    Log.d("MyService","创建子线程，子线程的id号为：" + Thread.currentThread().getId());
+                }
                 stopSelf();
             }
         }).start();
@@ -33,6 +37,7 @@ public class MyService extends Service {
 
     public void onDestroy(){
         super.onDestroy();
+        flag = false;
         Log.d("MyService","onDestroy executed");
     }
 }
