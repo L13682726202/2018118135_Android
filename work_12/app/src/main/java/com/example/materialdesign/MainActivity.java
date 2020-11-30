@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -16,9 +18,30 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
+
+    private Animal[] animals = {new Animal("mouse", R.drawable.mouse),
+            new Animal("cattle", R.drawable.cattle),
+            new Animal("tiger", R.drawable.tiger),
+            new Animal("rabbit", R.drawable.rabbit),
+            new Animal("dragon", R.drawable.dragon),
+            new Animal("snake", R.drawable.snake),
+            new Animal("horse", R.drawable.horse),
+            new Animal("sheep", R.drawable.sheep),
+            new Animal("monkey", R.drawable.monkey),
+            new Animal("chicken", R.drawable.chicken),
+            new Animal("dog", R.drawable.dog),
+            new Animal("pig", R.drawable.pig)};
+
+    private List<Animal> animalList = new ArrayList<>();
+
+    private AnimalAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +75,21 @@ public class MainActivity extends AppCompatActivity {
                         .show();
             }
         });
+        initAnimals();
+        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
+        GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
+        recyclerView.setLayoutManager(layoutManager);
+        adapter = new AnimalAdapter(animalList);
+        recyclerView.setAdapter(adapter);
+    }
+
+    private void initAnimals(){
+        animalList.clear();
+        for(int i = 0; i < 50; i++){
+            Random random = new Random();
+            int index = random.nextInt(animals.length);
+            animalList.add(animals[index]);
+        }
     }
 
     public boolean onCreateOptionsMenu(Menu menu){
