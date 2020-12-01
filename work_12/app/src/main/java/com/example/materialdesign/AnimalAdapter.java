@@ -1,6 +1,7 @@
 package com.example.materialdesign;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,7 +42,19 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.ViewHolder
             mContext = parent.getContext();
         }
         View view = LayoutInflater.from(mContext).inflate(R.layout.animal_item, parent, false);
-        return new ViewHolder(view);
+        final ViewHolder holder = new ViewHolder(view);
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int position = holder.getAdapterPosition();
+                Animal animal = mAnimalList.get(position);
+                Intent intent = new Intent(mContext, AnimalActivity.class);
+                intent.putExtra(AnimalActivity.ANIMAL_NAME, animal.getName());
+                intent.putExtra(AnimalActivity.ANIMAL_IMAGE_ID, animal.getImageId());
+                mContext.startActivity(intent);
+            }
+        });
+        return holder;
     }
 
     @Override
