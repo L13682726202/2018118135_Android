@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Bookkeeping</string>
+    <string name="app_name">轻松记账</string>
+    <string name="record_one">记一笔...</string>
 </resources>
