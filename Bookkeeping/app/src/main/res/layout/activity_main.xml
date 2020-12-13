@@ -25,7 +25,8 @@
             android:layout_height="match_parent"
             android:src="@mipmap/search"
             android:layout_alignParentRight="true"
-            android:padding="10dp"/>
+            android:padding="10dp"
+            android:onClick="onClick"/>
 
     </RelativeLayout>
 
@@ -48,6 +49,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_margin="20dp"
+        android:onClick="onClick"
         android:background="@drawable/main_morebtn_bg"/>
 
     <Button
@@ -57,6 +59,7 @@
         android:layout_alignBottom="@id/main_btn_more"
         android:background="@drawable/main_recordbtn_bg"
         android:layout_toLeftOf="@id/main_btn_more"
+        android:onClick="onClick"
         android:text="@string/record_one"
         android:textStyle="bold"
         android:textColor="@color/white"
