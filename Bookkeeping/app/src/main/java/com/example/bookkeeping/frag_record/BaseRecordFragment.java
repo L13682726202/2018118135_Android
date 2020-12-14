@@ -18,7 +18,7 @@ import android.widget.TextView;
 import com.example.bookkeeping.R;
 import com.example.bookkeeping.db.AccountBean;
 import com.example.bookkeeping.db.TypeBean;
-import com.example.bookkeeping.utils.BeiZhuDialog;
+import com.example.bookkeeping.utils.RemarkDialog;
 import com.example.bookkeeping.utils.KeyBoardUtils;
 import com.example.bookkeeping.utils.SelectTimeDialog;
 
@@ -174,10 +174,10 @@ public abstract class BaseRecordFragment extends Fragment implements View.OnClic
 
     //弹出备注对话框
     public  void showBZDialog(){
-        final BeiZhuDialog dialog = new BeiZhuDialog(getContext());
+        final RemarkDialog dialog = new RemarkDialog(getContext());
         dialog.show();
         dialog.setDialogSize();
-        dialog.setOnEnsureListener(new BeiZhuDialog.OnEnsureListener() {
+        dialog.setOnEnsureListener(new RemarkDialog.OnEnsureListener() {
             @Override
             public void onEnsure() {
                 String msg = dialog.getEditText();
