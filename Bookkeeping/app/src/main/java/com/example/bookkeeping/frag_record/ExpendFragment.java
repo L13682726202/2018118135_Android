@@ -1,11 +1,12 @@
 package com.example.bookkeeping.frag_record;
 
 import com.example.bookkeeping.R;
+import com.example.bookkeeping.db.DBManager;
+import com.example.bookkeeping.db.TypeBean;
+
+import java.util.List;
 
 public class ExpendFragment extends BaseRecordFragment {
-
-
-    // 重写
     @Override
     public void loadDataToGV() {
         super.loadDataToGV();
