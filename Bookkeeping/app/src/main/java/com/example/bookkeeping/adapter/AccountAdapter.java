@@ -16,9 +16,9 @@ import java.util.List;
 
 public class AccountAdapter extends BaseAdapter {
     Context context;
-    List<AccountBean>mDatas;
+    List<AccountBean> mDatas;
     LayoutInflater inflater;
-    int year,month,day;
+    int year, month, day;
     public AccountAdapter(Context context, List<AccountBean> mDatas) {
         this.context = context;
         this.mDatas = mDatas;
