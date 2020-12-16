@@ -25,7 +25,8 @@ public class BudgetDialog extends Dialog implements View.OnClickListener {
     ImageView cancelIv;
     Button ensureBtn;
     EditText moneyEt;
-    public  interface OnEnsureListener{
+
+    public interface OnEnsureListener{
         public void onEnsure(float money);
     }
 
