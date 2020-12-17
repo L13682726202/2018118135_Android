@@ -21,8 +21,16 @@
     <string name="date_empty">数据为空，无此类记录~~</string>
 
     <string name="about_appinfo">应用信息</string>
-    <string name="about_version">版本</string>
-    <string name="about_1">1.0</string>
+    <string name="about_version">版本 1.0</string>
+    <string name="about_app">关于应用</string>
+    <string name="about_function">本APP实现如下功能：</string>
+    <string name="about_function1">1、记录当天收支情况</string>
+    <string name="about_function2">2、计算当月支出收入总钱数，以及设置预算金额</string>
+    <string name="about_function3">3、查看历史记录账单</string>
+    <string name="about_function4">4、选择对某年某月的支出收入情况进行图表分析</string>
+    <string name="about_function5">5、根据账单的备注搜索历史账单信息</string>
+    <string name="about_author">关于开发者</string>
+    <string name="about_authorinfo">一个正在努力学习Android的菜鸟程序猿。。。</string>
 
     <string name="history_info">本月账单记录</string>
     <string name="clear_all">清空所有记录</string>
