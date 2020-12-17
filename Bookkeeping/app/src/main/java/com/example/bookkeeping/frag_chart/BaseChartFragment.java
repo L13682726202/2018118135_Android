@@ -49,7 +49,7 @@ abstract public class BaseChartFragment extends Fragment {
         return view;
     }
 
-    protected  void addLVHeaderView(){
+    protected void addLVHeaderView(){
         //将布局转换成View对象
         View headerView = getLayoutInflater().inflate(R.layout.item_chartfrag_top,null);
         //将View添加到ListView的头布局上
@@ -61,6 +61,10 @@ abstract public class BaseChartFragment extends Fragment {
         barChart.getDescription().setEnabled(false);
         //设置柱状图的内边距
         barChart.setExtraOffsets(20, 20, 20, 20);
+        //设置柱状图大小不可缩放
+        barChart.setScaleYEnabled(false);
+        barChart.setScaleXEnabled(false);
+        barChart.setScaleEnabled(false);
         //设置坐标轴
         setAxis(year,month);
         //设置坐标轴显示的数据
