@@ -19,7 +19,7 @@
         android:text="轻松记账"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/start_iv"
-        android:textSize="50sp"
+        android:textSize="35sp"
         android:textStyle="bold"
         android:layout_marginTop="10dp"/>
 
@@ -27,11 +27,22 @@
         android:id="@+id/start_tv2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="精打细算，记录生活"
+        android:text="学会管理好自己的钱"
         android:layout_centerHorizontal="true"
-        android:textSize="25sp"
+        android:textSize="23sp"
         android:textStyle="bold"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="100dp"/>
+
+    <TextView
+        android:id="@+id/start_tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="也是一种智慧"
+        android:layout_centerHorizontal="true"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"/>
 
 </RelativeLayout>
