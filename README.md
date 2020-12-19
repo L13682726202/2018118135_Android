@@ -46,3 +46,8 @@
 
 第十二次实验的md文档：https://github.com/L13682726202/2018118135_Android/blob/master/work_12/work_12.md
 
+期末设计(轻松记账APP)：https://github.com/L13682726202/2018118135_Android/tree/master/Bookkeeping
+
+期末设计(轻松记账APP)的md文档：https://github.com/L13682726202/2018118135_Android/blob/master/Bookkeeping/Bookkeeping.md
+
+期末设计(轻松记账APP)的apk包：https://github.com/L13682726202/2018118135_Android/tree/master/Bookkeeping/app/release
