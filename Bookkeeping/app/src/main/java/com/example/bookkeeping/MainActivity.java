@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     int year,month,day;
     //头布局相关控件
     View headerView;
-    TextView topOutTv,topInTv,topbudgetTv,topConTv;
+    TextView topOutTv,topInTv,topbudgetTv,topConTv,topChartTv;
     ImageView topShowIv;
     SharedPreferences preferences;
 
@@ -122,10 +122,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         topInTv = headerView.findViewById(R.id.item_main_lv_top_tv_income);
         topbudgetTv = headerView.findViewById(R.id.item_main_lv_top_tv_budget);
         topConTv = headerView.findViewById(R.id.item_main_lv_top_tv_day);
+        topChartTv = headerView.findViewById(R.id.item_main_lv_top_tv4);
         topShowIv = headerView.findViewById(R.id.item_main_lv_top_iv_hide);
 
         topbudgetTv.setOnClickListener(this);
-        headerView.setOnClickListener(this);
+        topChartTv.setOnClickListener(this);
         topShowIv.setOnClickListener(this);
     }
 
@@ -201,12 +202,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //切换TextView明文和密文
                 toggleShow();
                 break;
-        }
-        if (v == headerView) {
-            //头布局被点击了
-            Intent intent = new Intent();
-            intent.setClass(this, MonthChartActivity.class);
-            startActivity(intent);
+            case R.id.item_main_lv_top_tv4:
+                //查看表格分析的Textview被点击了
+                Intent intent = new Intent();
+                intent.setClass(this, MonthChartActivity.class);
+                startActivity(intent);
+                break;
         }
     }
 
